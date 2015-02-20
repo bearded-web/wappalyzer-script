@@ -1,0 +1,40 @@
+{
+    "type": "techs",
+    "techs": [
+        {
+            "categories": ["javascript-frameworks"],
+            "name": "AngularJS",
+            "version": "",
+            "confidence": 100,
+            "url": ""
+        },
+        {
+            "categories": ["analytics"],
+            "name": "Google Analytics",
+            "version": "",
+            "confidence": 100,
+            "url": ""
+        },
+        {
+            "categories": ["javascript-frameworks"],
+            "name": "Lo-dash",
+            "version": "",
+            "confidence": 100,
+            "url": ""
+        },
+        {
+            "categories": ["web-servers"],
+            "name": "Nginx",
+            "version": "1.1.19",
+            "confidence": 100,
+            "url": ""
+        },
+        {
+            "categories": ["web-frameworks"],
+            "name": "Twitter Bootstrap",
+            "version": "",
+            "confidence": 100,
+            "url": ""
+        }
+    ]
+}

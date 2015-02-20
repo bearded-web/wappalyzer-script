@@ -1,0 +1,9 @@
+{
+    "id": "54ddeb00fe576638f5000007",
+    "type": "raw",
+    "created": "2015-02-13T07:16:00.917-05:00",
+    "updated": "2015-02-13T07:16:00.917-05:00",
+    "scan": "54ddeafcfe576638f5000005",
+    "scanSession": "54ddeafcfe576638f5000003",
+    "raw": "[{\"url\":\"http://skimmer.tulu.la\",\"finalUrl\":\"http://skimmer.tulu.la\",\"application\":\"AngularJS\",\"confidence\":100,\"version\":\"\",\"categories\":[\"javascript-frameworks\"]},{\"url\":\"http://skimmer.tulu.la\",\"finalUrl\":\"http://skimmer.tulu.la\",\"application\":\"Google Analytics\",\"confidence\":100,\"version\":\"\",\"categories\":[\"analytics\"]},{\"url\":\"http://skimmer.tulu.la\",\"finalUrl\":\"http://skimmer.tulu.la\",\"application\":\"Lo-dash\",\"confidence\":100,\"version\":\"\",\"categories\":[\"javascript-frameworks\"]},{\"url\":\"http://skimmer.tulu.la\",\"finalUrl\":\"http://skimmer.tulu.la\",\"application\":\"Nginx\",\"confidence\":100,\"version\":\"1.1.19\",\"categories\":[\"web-servers\"]},{\"url\":\"http://skimmer.tulu.la\",\"finalUrl\":\"http://skimmer.tulu.la\",\"application\":\"Twitter Bootstrap\",\"confidence\":100,\"version\":\"\",\"categories\":[\"web-frameworks\"]}]\r\n"
+}
