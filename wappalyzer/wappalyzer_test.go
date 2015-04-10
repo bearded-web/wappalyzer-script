@@ -2,18 +2,19 @@ package wappalyzer
 
 import (
 	"encoding/json"
-	"github.com/bearded-web/bearded/models/report"
+	"fmt"
 	"io/ioutil"
 	"path"
 	"testing"
-	"github.com/stretchr/testify/require"
-	"github.com/stretchr/testify/assert"
+
 	"code.google.com/p/go.net/context"
 	"github.com/bearded-web/bearded/models/plan"
+	"github.com/bearded-web/bearded/models/report"
 	"github.com/bearded-web/bearded/pkg/script"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"fmt"
-	"github.com/bearded-web/bearded/models/plugin")
+	"github.com/stretchr/testify/require"
+)
 
 type ClientMock struct {
 	mock.Mock
@@ -65,14 +66,14 @@ func TestHandle(t *testing.T) {
 		pl := plan.WorkflowStep{
 			Name:   "underscan",
 			Plugin: "barbudo/wappalyzer:0.0.2",
-			Conf:   &plugin.Conf{CommandArgs: fmt.Sprintf(target)},
+			Conf:   &plan.Conf{CommandArgs: fmt.Sprintf(target)},
 		}
 		client.On("RunPlugin", bg, &pl).
-		Return(data.ToolReport, nil).Once()
+			Return(data.ToolReport, nil).Once()
 		client.On("SendReport", bg, data.ExpectedReport).Return(nil).Once()
 
 		var s script.Scripter = New()
-		err := s.Handle(bg, client, &plugin.Conf{Target: target})
+		err := s.Handle(bg, client, &plan.Conf{Target: target, CommandArgs: fmt.Sprintf(target)})
 		require.NoError(t, err)
 		client.Mock.AssertExpectations(t)
 	}
