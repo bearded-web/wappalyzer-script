@@ -11,21 +11,28 @@ type Extra struct {
 	Title string `json:"title"`
 }
 
+type Reference struct {
+	Url   string `json:"url"`
+	Title string `json:"title"`
+}
+
 type Issue struct {
-	UniqId   string   `json:"uniqId,omitempty" bson:"uniqId" description:"id for merging similar issues"`
-	Summary  string   `json:"summary"`
-	VulnType int      `json:"vulnType,omitempty" bson:"vulnType" description:"vulnerability type from vulndb"`
-	Severity Severity `json:"severity"`
-	Extras   []*Extra `json:"extras,omitempty" bson:"extras" description:"information about vulnerability"`
-	Desc     string   `json:"desc,omitempty"`
-	Vector   *Vector  `json:"vector,omitempty"`
+	UniqId     string       `json:"uniqId,omitempty" bson:"uniqId" description:"id for merging similar issues"`
+	Summary    string       `json:"summary"`
+	VulnType   int          `json:"vulnType,omitempty" bson:"vulnType" description:"vulnerability type from vulndb"`
+	Severity   Severity     `json:"severity"`
+	References []*Reference `json:"references,omitempty" bson:"references" description:"information about vulnerability"`
+	Extras     []*Extra     `json:"extras,omitempty" bson:"extras" description:"information about vulnerability, deprecated"`
+	Desc       string       `json:"desc,omitempty"`
+	Vector     *Vector      `json:"vector,omitempty"`
 	//	Affect   Affect   `json:"affect,omitempty" description:"who is affected by the issue?"`
 }
 
 type Status struct {
-	Confirmed bool `json:"confirmed"`
+	Confirmed bool `json:"confirmed" description:"the issue was confirmed by someone"`
 	False     bool `json:"false"`
 	Muted     bool `json:"muted"`
+	Resolved  bool `json:"resolved"`
 }
 
 type Report struct {
